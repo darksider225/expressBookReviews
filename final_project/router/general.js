@@ -158,7 +158,7 @@ public_users.get('/review/:isbn',function (req, res) {
   //Write your code here
   const isbn = req.params.isbn;
   if (books[isbn]) {
-    res.status(200).send(`Reviews: ${JSON.stringify(books[isbn].reviews)}`);
+    res.status(200).json({message: `Reviews: ${JSON.stringify(books[isbn].reviews)}`});
   }
   else {
     res.status(404).json({ message: `Book not found for ISBN: ${isbn}`})
